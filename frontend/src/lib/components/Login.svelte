@@ -20,7 +20,7 @@
         height: 290px;
         top: 50%;
         left: 50%;
-        margin-top: -140px;
+        margin-top: -245px;
         margin-left: -170px;
 
         background: #F7CA86;

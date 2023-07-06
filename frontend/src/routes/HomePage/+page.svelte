@@ -3,11 +3,8 @@
 </script>
 
 
-<HomePage />
-
-
-
-
-
+<section>
+    <HomePage />
+</section>
 
 

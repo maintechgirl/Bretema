@@ -1,6 +1,5 @@
 <script>
     import Login from "$lib/components/Login.svelte";
-
 </script>
 
 
@@ -9,6 +8,3 @@
 </section>
 
 
-<style>
-
-</style>
