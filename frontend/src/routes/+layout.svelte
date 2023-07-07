@@ -1,8 +1,13 @@
+<script>
+    import "../app.css";
+</script>
+
 <main>
     <slot/>
 </main>
 
 <style>
+
     :global(body) {
         font-family: 'Inter', sans-serif;
         margin: 0;
@@ -19,6 +24,5 @@
         background-position: center;
         background-size: cover;
     }
-
 
 </style>

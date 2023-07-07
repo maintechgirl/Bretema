@@ -1,0 +1,41 @@
+<script>
+    import Select from 'svelte-select';
+
+    let collection = [
+        {value: 'VER TODO', label: 'VER TODO'},
+        {value: 'CON STOCK', label: 'CON STOCK'},
+        {value: 'SIN STOCK', label: 'SIN STOCK'},
+    ];
+
+    let value;
+</script>
+
+
+<div>
+    <Select items={collection} bind:value showChevron/>
+</div>
+
+<p>{value?.label || ''}</p>
+
+
+<style>
+
+
+    div {
+        --width: 200px;
+        --height: 43px;
+        --chevron-icon-width: 16px;
+        --background: #F7CA86;
+        --placeholder-color: #F7CA86;
+
+        --border: 1px solid gray;
+        --border-radius: 20px;
+        --list-border: 14px solid #F7CA86;
+        --list-border-radius: 20px;
+        --border-focused: 1px solid gray;
+
+        --item-hover-bg: rgba(253, 214, 160, 0.88);
+        --item-is-active-bg: rgba(253, 214, 160, 0.88);
+        --item-is-active-color: black;
+    }
+</style>
