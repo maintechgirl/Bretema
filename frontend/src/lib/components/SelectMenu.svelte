@@ -37,5 +37,11 @@
         --item-hover-bg: rgba(253, 214, 160, 0.88);
         --item-is-active-bg: rgba(253, 214, 160, 0.88);
         --item-is-active-color: black;
+
+        --font-size: 12px;
+        --font-weight: bold;
+        --icons-color: #452E0D;
+        --cursor: pointer;
+        --chevron-pointer-events: pointer;
     }
 </style>

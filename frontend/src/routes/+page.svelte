@@ -1,12 +1,10 @@
 <script>
-    import HomePage from "$lib/pages/HomePage.svelte";
+    import Catalog from "$lib/pages/Catalog.svelte";
 </script>
 
-
-<HomePage />
-
-
-
+<section>
+    <Catalog />
+</section>
 
 
 

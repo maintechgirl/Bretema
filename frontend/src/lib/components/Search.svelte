@@ -37,6 +37,7 @@
         padding: 8px;
         background: #F7CA86;
         outline: none;
+        cursor: pointer;
     }
 
     .material-symbols-outlined {
