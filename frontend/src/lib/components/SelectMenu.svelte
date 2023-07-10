@@ -15,11 +15,10 @@
     <Select items={collection} bind:value showChevron/>
 </div>
 
-<p>{value?.label || ''}</p>
+<!--<p>{value?.label || ''}</p>-->
 
 
 <style>
-
 
     div {
         --width: 200px;

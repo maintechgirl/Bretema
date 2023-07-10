@@ -1,7 +1,7 @@
 <script>
-    import Loginpage from "$lib/pages/Loginpage.svelte";
+    import Login from "$lib/pages/Login.svelte";
 </script>
 
 <section>
-    <Loginpage />
+    <Login />
 </section>

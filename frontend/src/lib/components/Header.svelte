@@ -18,9 +18,8 @@
 
 <style>
 
-
     a {
-        width: 150px;
+        height: 2px;
     }
 
     .img_size1 {

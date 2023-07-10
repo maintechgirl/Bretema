@@ -33,13 +33,14 @@
     .menu {
         display: flex;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     .products {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        margin: 25px 0 25px 0;
+        margin: 25px auto 25px auto;
         gap: 10%;
     }
 
