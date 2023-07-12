@@ -9,11 +9,13 @@
 <div>
     <input type="text"
            id="search-field"
-           placeholder=""
+           placeholder="Search"
            autocomplete="off"
            bind:value={searchTerm}
-           on:input/>
-    <span class="material-symbols-outlined">search</span></div>
+           on:input
+    />
+    <span class="material-symbols-outlined">search</span>
+</div>
 
 
 <style>
@@ -21,14 +23,14 @@
     #search-field {
         width: 179px;
         height: 25px;
-        font-size: 1rem;
+        font-size: 12px;
         border: 1px solid gray;
         border-radius: 20px;
         padding: 8px;
-        background: #F7CA86;
+        background: #FDDED4;
         outline: none;
         cursor: pointer;
-        margin-right: -29px;
+        margin-right: -21px;
     }
 
     .material-symbols-outlined {
@@ -38,5 +40,6 @@
         font-size: 22px;
         color: #452E0D;
     }
+
 
 </style>

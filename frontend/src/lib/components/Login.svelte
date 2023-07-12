@@ -3,11 +3,11 @@
 
 
 <div class="container">
-    <form>
-        <label for="uname"><b>Usario</b></label>
+    <form method="POST" action="/login">
+        <label for="uname">Usario</label>
         <input type="text" placeholder="Enter Username" name="uname" required>
 
-        <label for="psw"><b>Contraseña</b></label>
+        <label for="psw">Contraseña</label>
         <input type="password" placeholder="Enter Password" name="psw" required>
         <div class="btn"><span class="material-symbols-outlined">priority</span></div>
     </form>
@@ -23,7 +23,7 @@
         margin-top: -245px;
         margin-left: -170px;
 
-        background: #F7CA86;
+        background: #FDDED4;
         border-radius: 20px;
     }
 
@@ -37,6 +37,7 @@
         padding-top: 13px;
         font-size: 14px;
         color: #452E0D;
+        font-weight: bold;
     }
 
     input {

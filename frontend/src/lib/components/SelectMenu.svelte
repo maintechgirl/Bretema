@@ -24,8 +24,8 @@
         --width: 200px;
         --height: 43px;
         --chevron-icon-width: 16px;
-        --background: #F7CA86;
-        --placeholder-color: #F7CA86;
+        --background: #FDDED4;
+        --placeholder-color: grey;
 
         --border: 1px solid gray;
         --border-radius: 20px;
@@ -43,4 +43,5 @@
         --cursor: pointer;
         --chevron-pointer-events: pointer;
     }
+
 </style>

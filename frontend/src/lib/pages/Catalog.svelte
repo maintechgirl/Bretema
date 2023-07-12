@@ -1,5 +1,5 @@
 <script>
-    import Header from "$lib/components/Header.svelte";
+    import HeaderCatalog from "$lib/components/HeaderCatalog.svelte";
     import Search from "$lib/components/Search.svelte";
     import SelectMenu from "../components/SelectMenu.svelte";
     import ProductCard from "../components/ProductCard.svelte";
@@ -8,7 +8,7 @@
 </script>
 
 <section>
-    <Header/>
+    <HeaderCatalog />
     <div class="menu">
         <SelectMenu/>
         <Search/>

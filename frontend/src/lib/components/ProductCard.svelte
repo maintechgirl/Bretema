@@ -37,15 +37,16 @@
 <style>
 
     article {
-        background-color: #FDDED4;
+        background-color: white;
         width: 180px;
         height: 215px;
-        border: 5px solid #F7CA86;
+        border: 5px solid #c6b995;
         border-radius: 5px;
         cursor: pointer;
         margin-bottom: 25px;
-    }
+        font-weight: normal;
 
+    }
 
     article:hover {
         transform: translate(2px, 2px);
@@ -56,7 +57,7 @@
         height: 50%;
         object-fit: cover;
         overflow: hidden;
-        box-shadow: -1px 1px 5px 0px #F7CA86;
+        box-shadow: -1px 1px 5px 0 #F7CA86;
     }
 
     .product-info {
@@ -65,11 +66,16 @@
 
     .product-info p {
         font-size: 14px;
-       line-height: 12px;
+        line-height: 12px;
     }
 
     .material-symbols-outlined {
         font-weight: lighter;
+        color: #452E0D;
+    }
+
+    .material-symbols-outlined:hover {
+        font-weight: bold;
         color: #452E0D;
     }
 
@@ -85,7 +91,7 @@
         bottom: 27px;
     }
 
-    .icon-quantity{
+    .icon-quantity {
         position: relative;
         bottom: 54px;
 
@@ -93,12 +99,11 @@
         flex-direction: row;
     }
 
-    .icon-quantity p{
+    .icon-quantity p {
         width: 20px;
         position: relative;
         bottom: 7px;
         left: 6px;
     }
-
 
 </style>

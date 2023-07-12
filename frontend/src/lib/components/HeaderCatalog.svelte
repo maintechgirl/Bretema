@@ -5,7 +5,7 @@
     <div>
         <a href="/"><img src="src/assets/logosinfondo.png" alt="Logo" class="img_size1"/></a>
     </div>
-    <a href="/">
+    <a href="/AddProduct">
         <img src="src/assets/fondo-bretema-sinfondo.png" alt="Logo" class="img_size2"/>
         <span class="material-symbols-outlined">add_box</span>
     </a>
@@ -48,4 +48,11 @@
         color: #452E0D;
         font-weight: lighter;
     }
+
+    .material-symbols-outlined:hover {
+        font-weight: normal;
+
+    }
+
+
 </style>
