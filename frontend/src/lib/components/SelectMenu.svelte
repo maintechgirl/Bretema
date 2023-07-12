@@ -29,11 +29,12 @@
 
         --border: 1px solid gray;
         --border-radius: 20px;
-        --list-border: 14px solid #F7CA86;
+        --list-border: 14px solid #c7ba93;
         --list-border-radius: 20px;
         --border-focused: 1px solid gray;
+        --border-hover: 1px solid gray;
 
-        --item-hover-bg: rgba(253, 214, 160, 0.88);
+        --item-hover-bg: #FDDED4;
         --item-is-active-bg: rgba(253, 214, 160, 0.88);
         --item-is-active-color: black;
 

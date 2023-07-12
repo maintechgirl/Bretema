@@ -9,7 +9,7 @@
         <img src="src/assets/fondo-bretema-sinfondo.png" alt="Logo" class="img_size2"/>
         <span class="material-symbols-outlined">add_box</span>
     </a>
-    <a href="/Login">
+    <a href="/Welcome">
         <img src="src/assets/fondo-bretema-sinfondo.png" alt="Logo" class="img_size2"/>
         <span class="material-symbols-outlined">logout</span>
     </a>
