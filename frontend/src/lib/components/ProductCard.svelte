@@ -16,20 +16,18 @@
         <p>{name} </p>
         <p>{color} </p>
 
-
         <div class="icon-redact">
-            <span class="material-symbols-outlined">edit_square</span>
+            <a href="/ModifyProduct"><span class="material-symbols-outlined">edit_square</span></a>
         </div>
         <div class="icon-delete">
             <span class="material-symbols-outlined">delete</span>
         </div>
 
         <div class="icon-quantity">
-            <span class="material-symbols-outlined">add_box</span>
-            <p>2</p>
             <span class="material-symbols-outlined">indeterminate_check_box</span>
+            <p>2</p>
+            <span class="material-symbols-outlined">add_box</span>
         </div>
-
     </div>
 </article>
 

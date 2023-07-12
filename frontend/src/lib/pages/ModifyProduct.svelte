@@ -9,8 +9,8 @@
     <HeaderProduct/>
 
     <form>
-      <a href="/" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
-        <p>Añadir Producto</p>
+        <a href="/" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
+        <p>Modificar Producto</p>
         <img src="src/assets/missingProductImage.png" alt="missingProductImage"/>
         <ul>
             <li>
@@ -27,13 +27,13 @@
             </li>
         </ul>
         <div class="btn_add-file">
-        <label for="file"></label>
-        <input
-                type="file"
-                id="file"
-                name="fileToUpload"
-                required
-        />
+            <label for="file"></label>
+            <input
+                    type="file"
+                    id="file"
+                    name="fileToUpload"
+                    required
+            />
         </div>
         <div>
             <button class="btn_submit" type="submit"><span class="material-symbols-outlined">check_box</span></button>
