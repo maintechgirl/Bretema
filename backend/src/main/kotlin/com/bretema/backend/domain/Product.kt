@@ -7,10 +7,9 @@ import jakarta.persistence.*
 @Entity
 class Product (
     @Id
-    @GeneratedValue
     var id: Long,
     var name: String,
     var color: String,
     var quantity: Int,
-    var imageUrl: String,
+    var imageUrl: String
 )

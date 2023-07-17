@@ -12,9 +12,14 @@ class ProductController (private val productRepository: ProductRepository) {
     @GetMapping("/catalog")
     fun getAllProducts(): List<Product> = productRepository.findAll()
 
-    @GetMapping("/catalog/{id}")
+   @GetMapping("/catalog/{id}")
     fun findProductById(@PathVariable id: Long): Product? {
         return productRepository.findById(id).orElseThrow { ProductNotFoundException() }
+    }
+
+    @PostMapping("/catalog")
+    fun addProduct(@RequestBody product: Product): Product? {
+        return productRepository.save(product)
     }
 
 }
