@@ -3,8 +3,15 @@
     import Search from "$lib/components/Search.svelte";
     import SelectMenu from "../components/SelectMenu.svelte";
     import ProductCard from "../components/ProductCard.svelte";
+    import {onMount} from "svelte";
 
-    let productList = [];
+    export let productsList = [];
+
+    onMount(() => {
+        fetch("http://localhost:8080/catalog")
+            .then(response => response.json())
+            .then(data => productsList = data)
+    })
 </script>
 
 <section>
@@ -15,17 +22,12 @@
     </div>
 
     <div class="products">
-        {#each productList as data}
+        {#each productsList as data}
             <ProductCard {...data}/>
         {/each}
     </div>
 
-    <div class="products">
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-    </div>
+
 
 </section>
 

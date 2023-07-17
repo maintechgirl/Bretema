@@ -9,7 +9,7 @@
 
         <label for="psw">Contraseña</label>
         <input type="password" placeholder="Enter Password" name="psw" required>
-        <div class="btn"><span class="material-symbols-outlined">priority</span></div>
+        <a href="/"><div class="btn"><span class="material-symbols-outlined">priority</span></div></a>
     </form>
 </div>
 
@@ -67,6 +67,10 @@
     .material-symbols-outlined {
         font-size: 50px;
         color: #452E0D;
+    }
+
+    a{
+        text-decoration: none;
     }
 
 </style>
