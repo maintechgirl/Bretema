@@ -10,7 +10,7 @@
 
 
 <article>
-    <img src="src/assets/missingProductImage.png" alt="product-image"/>
+    <img src={imageUrl} alt="product-image"/>
     <div class="product-info">
         <p>{name} </p>
         <p>{color} </p>
@@ -24,7 +24,7 @@
 
         <div class="icon-quantity">
             <span class="material-symbols-outlined">indeterminate_check_box</span>
-            <p>2</p>
+            <p>{quantity}</p>
             <span class="material-symbols-outlined">add_box</span>
         </div>
     </div>

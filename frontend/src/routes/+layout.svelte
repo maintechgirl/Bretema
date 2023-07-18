@@ -17,8 +17,8 @@
 
     main {
         max-width: 500px;
+        height: 801px;
         margin: auto;
-        height: 800px;
         background-image: url(src/assets/fondo.png);
         background-position: center;
         background-size: cover;

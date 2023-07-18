@@ -15,7 +15,7 @@
 </script>
 
 <section>
-    <HeaderCatalog />
+    <HeaderCatalog/>
     <div class="menu">
         <SelectMenu/>
         <Search/>
@@ -26,8 +26,6 @@
             <ProductCard {...data}/>
         {/each}
     </div>
-
-
 
 </section>
 
@@ -43,7 +41,7 @@
         justify-content: center;
         flex-wrap: wrap;
         margin: 25px auto 25px auto;
-        gap: 10%;
+        gap: 7%;
     }
 
 </style>
