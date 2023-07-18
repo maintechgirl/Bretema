@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.*
 @CrossOrigin
 class ProductController (private val productRepository: ProductRepository) {
 
-    @GetMapping("/catalog")
+    @GetMapping("/")
     fun getAllProducts(): List<Product> = productRepository.findAll()
 
-   @GetMapping("/catalog/{id}")
+   @GetMapping("/{id}")
     fun findProductById(@PathVariable id: Long): Product? {
         return productRepository.findById(id).orElseThrow { ProductNotFoundException() }
     }
 
-    @PostMapping("/catalog")
+    @PostMapping("/")
     fun addProduct(@RequestBody product: Product): Product? {
         return productRepository.save(product)
     }
 
-    @PutMapping("/catalog")
+    @PutMapping("/")
     fun updateProductById(@RequestBody product: Product): Product? {
         product.id?.let { productRepository.findById(it).orElseThrow { ProductNotFoundException() } }
         return productRepository.save(product)
     }
 
-    @DeleteMapping("/catalog/{id}")
+    @DeleteMapping("/{id}")
     fun deleteProductById(@PathVariable id: Long): Product? {
         val product: Product = productRepository.findById(id).orElseThrow { ProductNotFoundException() }
         productRepository.deleteById(id)

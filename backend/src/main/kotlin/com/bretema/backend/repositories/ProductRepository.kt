@@ -9,3 +9,4 @@ import java.util.*
 @Repository
 interface ProductRepository : JpaRepository<Product, Long> {
 }
+
