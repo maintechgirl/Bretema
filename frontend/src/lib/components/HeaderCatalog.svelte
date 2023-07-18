@@ -1,7 +1,7 @@
 <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200"/>
 
-<nav class="header" id="myHeader">
+<nav>
     <div>
         <a href="/"><img src="src/assets/logosinfondo.png" alt="Logo" class="img_size1"/></a>
     </div>

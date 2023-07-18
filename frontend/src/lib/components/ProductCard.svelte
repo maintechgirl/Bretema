@@ -6,22 +6,25 @@
     export let color;
     export let quantity;
     export let imageUrl;
-</script>
 
+    export let data;
+    export let onDelete;
+
+
+
+</script>
 
 <article>
     <img src={imageUrl} alt="product-image"/>
     <div class="product-info">
         <p>{name} </p>
         <p>{color} </p>
-
         <div class="icon-redact">
             <a href="/ModifyProduct"><span class="material-symbols-outlined">edit_square</span></a>
         </div>
-        <div class="icon-delete">
-            <span class="material-symbols-outlined">delete</span>
+        <div >
+            <button class="icon-delete" on:click={() => onDelete(data.id)}><span class="material-symbols-outlined">delete</span></button>
         </div>
-
         <div class="icon-quantity">
             <span class="material-symbols-outlined">indeterminate_check_box</span>
             <p>{quantity}</p>
