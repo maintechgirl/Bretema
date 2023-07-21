@@ -30,6 +30,7 @@
         outline: none;
         cursor: pointer;
         margin-right: -21px;
+        margin-left: 30px;
     }
 
     .material-symbols-outlined {

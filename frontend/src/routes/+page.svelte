@@ -7,16 +7,14 @@
     import SelectMenu from "../lib/components/SelectMenu.svelte";
     import ProductCard from "../lib/components/ProductCard.svelte";
 
-    let productsList = [];
 
+   export let productsList = [];
     onMount(() => {
         fetch("http://localhost:8080/")
             .then(response => response.json())
             .then(data => productsList = data)
     })
-
     let deleteProduct = (id) => {
-
         fetch("/${id}", {method: "DELETE"})
             .then(response => {
                 if (response.ok) {
@@ -30,17 +28,17 @@
 
 <section>
     <HeaderCatalog/>
+
     <div class="menu">
         <SelectMenu/>
         <Search/>
     </div>
 
     <div class="products">
-        {#each productsList as data}
-            <ProductCard {...data} onDelete={deleteProduct}/>
+        {#each productsList as productsList}
+            <ProductCard {...productsList} onDelete={deleteProduct}/>
         {/each}
     </div>
-
 </section>
 
 
@@ -57,8 +55,6 @@
 
     .menu {
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
     }
 
     .products {
@@ -66,7 +62,6 @@
         justify-content: center;
         flex-wrap: wrap;
         margin: 25px auto 25px auto;
-        gap: 7%;
     }
 </style>
 

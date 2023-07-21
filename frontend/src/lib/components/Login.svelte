@@ -17,14 +17,15 @@
     .container {
         position: fixed;
         width: 340px;
-        height: 290px;
+        height: 314px;
         top: 50%;
         left: 50%;
         margin-top: -245px;
         margin-left: -170px;
-
         background: #FDDED4;
+        border: 3px solid #c6ba93;
         border-radius: 20px;
+        box-shadow: -1px 1px 20px 0 #F7CA86;
     }
 
     form {
@@ -59,7 +60,7 @@
     }
 
     .btn {
-        margin-top: 14px;
+        margin: 25px;
         display: flex;
         justify-content: center;
     }
@@ -67,6 +68,10 @@
     .material-symbols-outlined {
         font-size: 50px;
         color: #452E0D;
+    }
+
+    .material-symbols-outlined:hover {
+        font-size: 55px;
     }
 
     a{

@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
 
 <script>
     export let id;
@@ -7,28 +8,34 @@
     export let quantity;
     export let imageUrl;
 
-    export let data;
+    export let productsList;
     export let onDelete;
-
-
 
 </script>
 
 <article>
     <img src={imageUrl} alt="product-image"/>
     <div class="product-info">
-        <p>{name} </p>
+        <p>{name}</p>
         <p>{color} </p>
+
+
+        <div class="group-icons-quantity">
+            <div>
+                <span class="material-symbols-outlined">indeterminate_check_box</span>
+            </div>
+            <div><p>{quantity}</p></div>
+            <div>
+                <span class="material-symbols-outlined">add_box</span>
+            </div>
+        </div>
+
+        <div class="group-icons-redact-delete">
         <div class="icon-redact">
             <a href="/ModifyProduct"><span class="material-symbols-outlined">edit_square</span></a>
         </div>
-        <div >
-            <button class="icon-delete" on:click={() => onDelete(data.id)}><span class="material-symbols-outlined">delete</span></button>
-        </div>
-        <div class="icon-quantity">
-            <span class="material-symbols-outlined">indeterminate_check_box</span>
-            <p>{quantity}</p>
-            <span class="material-symbols-outlined">add_box</span>
+        <div class="icon-delete">
+           <button on:click={() => onDelete(productsList.id)}><span class="material-symbols-outlined">delete</span></button>
         </div>
     </div>
 </article>
@@ -37,37 +44,39 @@
 <style>
 
     article {
-        background-color: white;
         width: 180px;
         height: 215px;
+        background-color: white;
         border: 5px solid #c6b995;
         border-radius: 5px;
-        cursor: pointer;
-        margin-bottom: 25px;
+        margin: 20px;
         font-weight: normal;
-
+        cursor: pointer;
     }
 
     article:hover {
         transform: translate(2px, 2px);
     }
 
+
     img {
         width: 100%;
         height: 50%;
         object-fit: cover;
         overflow: hidden;
-        box-shadow: -1px 1px 5px 0 #F7CA86;
+        box-shadow: -1px 1px 7px 0 #F7CA86;
     }
 
     .product-info {
         padding: 0 0 0 10px;
+        height: 20px;
     }
 
     .product-info p {
-        font-size: 14px;
+        font-size: 12px;
         line-height: 12px;
     }
+
 
     .material-symbols-outlined {
         font-weight: lighter;
@@ -79,31 +88,27 @@
         color: #452E0D;
     }
 
-    .icon-redact {
-        position: relative;
-        left: 131px;
-        bottom: 56px;
-    }
 
-    .icon-delete {
-        position: relative;
-        left: 131px;
-        bottom: 27px;
-    }
-
-    .icon-quantity {
-        position: relative;
-        bottom: 54px;
-
+    .group-icons-quantity {
         display: flex;
         flex-direction: row;
+        gap: 12px;
     }
 
-    .icon-quantity p {
-        width: 20px;
+    .group-icons-quantity p {
         position: relative;
-        bottom: 7px;
-        left: 6px;
+        top: -7px;
     }
+
+    .group-icons-redact-delete{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: relative;
+        top: -90px;
+        right: -124px;
+        width: 40px;
+    }
+
 
 </style>
