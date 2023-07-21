@@ -2,40 +2,42 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
 
 <script>
-    export let id;
+   /* export let id;
     export let name;
     export let color;
     export let quantity;
-    export let imageUrl;
-
-    export let productsList;
-    export let onDelete;
+    export let imageUrl;*/
+   export let product;
+   export let onDelete;
 
 </script>
 
 <article>
-    <img src={imageUrl} alt="product-image"/>
+    <img src={product.imageUrl} alt="product-image"/>
     <div class="product-info">
-        <p>{name}</p>
-        <p>{color} </p>
-
+        <p>{product.name}</p>
+        <p>{product.color} </p>
 
         <div class="group-icons-quantity">
             <div>
                 <span class="material-symbols-outlined">indeterminate_check_box</span>
             </div>
-            <div><p>{quantity}</p></div>
+            <div><p>{product.quantity}</p></div>
             <div>
                 <span class="material-symbols-outlined">add_box</span>
             </div>
         </div>
 
         <div class="group-icons-redact-delete">
-        <div class="icon-redact">
-            <a href="/ModifyProduct"><span class="material-symbols-outlined">edit_square</span></a>
-        </div>
-        <div class="icon-delete">
-           <button on:click={() => onDelete(productsList.id)}><span class="material-symbols-outlined">delete</span></button>
+            <div class="icon-redact">
+                <a href="/ModifyProduct"><span class="material-symbols-outlined">edit_square</span></a>
+            </div>
+
+            <div class="icon-delete">
+                <button on:click={() => onDelete(product.id)}>
+                    <span class="material-symbols-outlined">delete</span>
+                </button>
+            </div>
         </div>
     </div>
 </article>
@@ -100,7 +102,7 @@
         top: -7px;
     }
 
-    .group-icons-redact-delete{
+    .group-icons-redact-delete {
         display: flex;
         flex-direction: column;
         gap: 12px;

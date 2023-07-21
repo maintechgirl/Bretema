@@ -8,21 +8,27 @@
     import ProductCard from "../lib/components/ProductCard.svelte";
 
 
-   export let productsList = [];
+    export let productsList;
+
     onMount(() => {
         fetch("http://localhost:8080/")
             .then(response => response.json())
             .then(data => productsList = data)
-    })
+            .catch(error => console.error('Error fetching products:', error));
+    });
+
     let deleteProduct = (id) => {
-        fetch("/${id}", {method: "DELETE"})
+        fetch(`/${id}`, { method: "DELETE" })
             .then(response => {
                 if (response.ok) {
-                    console.log(`product deleted ${id}`);
+                    console.log(`Product deleted: ${id}`);
+                    // Update the local `productsList` by filtering out the deleted product
+                    productsList = productsList.filter(product => product.id !== id);
                 }
             })
-            .then(productsList)
-    }
+            .catch(error => console.error('Error deleting product:', error));
+    };
+
 
 </script>
 
@@ -35,9 +41,13 @@
     </div>
 
     <div class="products">
-        {#each productsList as productsList}
-            <ProductCard {...productsList} onDelete={deleteProduct}/>
-        {/each}
+        {#if productsList && productsList.length > 0}
+            {#each productsList as product}
+                <ProductCard {product} onDelete={deleteProduct} />
+            {/each}
+        {:else}
+            <p>No products found.</p>
+        {/if}
     </div>
 </section>
 
