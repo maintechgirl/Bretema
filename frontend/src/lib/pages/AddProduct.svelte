@@ -2,14 +2,14 @@
 
 
 <script>
-    import HeaderProduct from "../../lib/components/HeaderProduct.svelte";
+    import HeaderProduct from "../components/HeaderProduct.svelte";
 </script>
 
 <section>
     <HeaderProduct/>
 
     <form>
-      <a href="/static" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
+      <a href="/" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
         <p>Añadir Producto</p>
         <img src="src/assets/missingProductImage.png" alt="missingProductImage"/>
         <ul>

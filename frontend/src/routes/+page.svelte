@@ -7,8 +7,9 @@
     import SelectMenu from "../lib/components/SelectMenu.svelte";
     import ProductCard from "../lib/components/ProductCard.svelte";
 
+    export let productsList = [];
+    export let searchResults = [];
 
-    export let productsList;
 
     onMount(() => {
         fetch("http://localhost:8080/")
@@ -40,7 +41,7 @@
         <Search/>
     </div>
 
-    <div class="products">
+     <div class="products">
         {#if productsList && productsList.length > 0}
             {#each productsList as product}
                 <ProductCard {product} onDelete={deleteProduct} />
@@ -48,7 +49,17 @@
         {:else}
             <p>No products found.</p>
         {/if}
-    </div>
+
+        <!-- {#if searchResults.length > 0}
+             <ul>
+                 {#each searchResults as result (result.id)}
+                     <li>{result.name}</li>.
+                 {/each}
+             </ul>
+         {:else}
+             <p>No products found.</p>
+         {/if}
+    </div>-->
 </section>
 
 

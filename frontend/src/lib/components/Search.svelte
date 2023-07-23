@@ -1,7 +1,30 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"/>
 
 <script>
-    export let searchTerm;
+    import { onMount } from 'svelte';
+   export let searchTerm = '';
+   export let searchResults = [];
+
+   //FUNCION QUE DEBE LLAMAR UN ENDPOINT A SER CREADO EN EL BACKEND QUE TENGA UNA REQUETS PARAM
+    async function fetchSearchResults() {
+        try {
+            const response = await fetch(`http://localhost:8080/search?term=${searchTerm}`);
+            const data = await response.json();
+            // Actualizar los resultados de búsqueda con la respuesta de la API
+            searchResults = data.results;
+        } catch (error) {
+            console.error('Error al realizar la búsqueda:', error);
+        }
+    }
+
+   //FUNCION PARA CAPTURAR EL VALOR DE BUSQUEDA DEL INPUT
+   function handleInput(event) {
+       searchTerm = event.target.value;
+       fetchSearchResults();
+   }
+
+   // Llamar a fetchSearchResults() cuando el componente se monte inicialmente
+   onMount(fetchSearchResults);
 </script>
 
 
@@ -11,7 +34,7 @@
            placeholder="Search"
            autocomplete="off"
            bind:value={searchTerm}
-           on:input
+           on:input={handleInput}
     />
     <span class="material-symbols-outlined">search</span>
 </div>
@@ -40,6 +63,5 @@
         font-size: 22px;
         color: #452E0D;
     }
-
 
 </style>
