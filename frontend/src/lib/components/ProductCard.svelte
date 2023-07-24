@@ -10,6 +10,16 @@
    export let product;
    export let onDelete;
 
+
+   let count = 0;
+
+   function plusClick() {
+       count += 1;
+   }
+   function menosClick() {
+       count -= 1;
+   }
+
 </script>
 
 <article>
@@ -19,13 +29,10 @@
         <p>{product.color} </p>
 
         <div class="group-icons-quantity">
-            <div>
-                <span class="material-symbols-outlined">indeterminate_check_box</span>
-            </div>
-            <div><p>{product.quantity}</p></div>
-            <div>
-                <span class="material-symbols-outlined">add_box</span>
-            </div>
+            <button on:click={menosClick}>-</button>
+            <div><p>{product.quantity} {count}</p></div>
+            <button on:click={plusClick}>+</button>
+
         </div>
 
         <div class="group-icons-redact-delete">
