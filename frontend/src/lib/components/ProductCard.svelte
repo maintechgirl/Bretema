@@ -11,7 +11,8 @@
    export let onDelete;
 
 
-   let count = 0;
+
+   let count = product.quantity;
 
    function plusClick() {
        count += 1;
@@ -30,9 +31,8 @@
 
         <div class="group-icons-quantity">
             <button on:click={menosClick}>-</button>
-            <div><p>{product.quantity} {count}</p></div>
+            <div><p> {count}</p></div>
             <button on:click={plusClick}>+</button>
-
         </div>
 
         <div class="group-icons-redact-delete">
