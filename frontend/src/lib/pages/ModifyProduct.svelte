@@ -3,38 +3,81 @@
 
 <script>
     import HeaderProduct from "../components/HeaderProduct.svelte";
+
+    let products = "";
+    let error;
+    let name = "";
+    let color = "";
+    let quantity = "";
+    let url = "";
+    let id = "";
+
+    function createID() {
+        return crypto.randomUUID()
+    }
+
+    function updateProduct() {
+        let info = {
+            name: name,
+            color: color,
+            quantity: quantity,
+            imageUrl: url,
+            id: createID()
+        };
+
+        fetch("http://localhost:8080/", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(info)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {products = data;})
+            .catch(error => {
+                console.error("Error:", error);
+            })
+        alert("producto añadido");
+    }
 </script>
 
 <section>
     <HeaderProduct/>
 
-    <form>
-        <a href="/" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
+    <form on:submit|preventDefault={updateProduct}>
+        <a href="/" class="btn-close"><span class="material-symbols-outlined">close</span></a>
         <p>Modificar Producto</p>
         <img src="src/assets/missingProductImage.png" alt="missingProductImage"/>
         <ul>
             <li>
                 <label for="name">Nombre*</label>
-                <input type="text" id="name" name="name"/>
+                <input type="text" id="name" name="name" bind:value={name} required/>
             </li>
             <li>
                 <label for="color">Color</label>
-                <input type="text" id="color" name="color"/>
+                <input type="text" id="color" name="color" bind:value={color} required/>
             </li>
             <li>
                 <label for="cantidad">Cantidad*</label>
-                <input type="text" id="cantidad" name="cantidad"/>
+                <input type="text" id="cantidad" name="cantidad" bind:value={quantity} required/>
+            </li>
+            <li>
+                <label for="image_url">Imagen_Url*</label>
+                <input type="text" bind:value={url} required/>
             </li>
         </ul>
-        <div class="btn_add-file">
-            <label for="file"></label>
-            <input
-                    type="file"
-                    id="file"
-                    name="fileToUpload"
-                    required
-            />
-        </div>
+        <!--<div class="btn_add-file">
+       <label for="file"></label>
+        <input
+                type="file"
+                id="file"
+                name="fileToUpload"
+                required
+        />
+        </div>-->
         <div>
             <button class="btn_submit" type="submit"><span class="material-symbols-outlined">check_box</span></button>
         </div>
@@ -100,39 +143,47 @@
     .btn-close {
         display: flex;
         align-self: end;
-        font-size: 30px;
         cursor: pointer;
         outline: none;
         text-decoration: none;
         color: #452E0D;
+        left: -14px;
+        position: relative;
+        bottom: -16px;
     }
 
-    .btn_submit{
+    .btn_submit {
         cursor: pointer;
         color: #452E0D;
         border: none;
         background-color: #FDDED4;
-        margin: 5px;
+        margin-bottom: 20px;
+
     }
 
-    .btn_add-file{
+    /*.btn_add-file {
         cursor: pointer;
         border: none;
         margin: 10px;
         width: 308px;
         display: contents;
+    }*/
+
+    .btn-close .material-symbols-outlined {
+        font-size: 27px;
     }
 
-    .material-symbols-outlined{
-        font-size: 40px;
+    .btn_submit .material-symbols-outlined {
+        font-size: 49px;
     }
 
-    .btn_submit .material-symbols-outlined{
-        font-size: 60px;
-    }
-
-    .material-symbols-outlined:hover {
+    .btn-close .material-symbols-outlined:hover {
         font-weight: bold;
+        font-size: 29px;
+    }
+
+    .btn_submit .material-symbols-outlined:hover {
+        font-size: 53px;
     }
 
     img {

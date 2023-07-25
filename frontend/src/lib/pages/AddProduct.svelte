@@ -27,9 +27,7 @@
 
         fetch("http://localhost:8080/", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify(info)
         })
             .then(response => {
@@ -69,7 +67,7 @@
                 <input type="text" id="cantidad" name="cantidad" bind:value={quantity} required/>
             </li>
             <li>
-                <label for="image_url">ImagenUrl*</label>
+                <label for="image_url">Imagen_Url*</label>
                 <input type="text" bind:value={url} required/>
             </li>
         </ul>
