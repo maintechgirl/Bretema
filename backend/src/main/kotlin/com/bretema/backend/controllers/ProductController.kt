@@ -45,7 +45,7 @@ class ProductController(private val productRepository: ProductRepository) {
         }
     }
 
-    @PostMapping("/{id}")
+    @PutMapping("/{id}")
     fun updateProduct(
         @PathVariable id: String,
         @RequestBody updatedProduct: Product
@@ -59,6 +59,7 @@ class ProductController(private val productRepository: ProductRepository) {
         product.color = updatedProduct.color
         product.quantity = updatedProduct.quantity
         product.imageUrl = updatedProduct.imageUrl
+        product.id = updatedProduct.id
 
         val updatedProduct = productRepository.save(product)
         return ResponseEntity.ok(updatedProduct)
