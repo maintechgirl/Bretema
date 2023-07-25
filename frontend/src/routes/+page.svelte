@@ -19,7 +19,7 @@
     });
 
     let deleteProduct = (id) => {
-        fetch(`/${id}`, { method: "DELETE" })
+        fetch(`http://localhost:8080/${id}`, { method: "DELETE" })
             .then(response => {
                 if (response.ok) {
                     console.log(`Product deleted: ${id}`);
@@ -27,8 +27,10 @@
                     productsList = productsList.filter(product => product.id !== id);
                 }
             })
+            .then(productsList)
             .catch(error => console.error('Error deleting product:', error));
     };
+
 
 
 </script>

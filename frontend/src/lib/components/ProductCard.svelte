@@ -10,8 +10,6 @@
    export let product;
    export let onDelete;
 
-
-
    let count = product.quantity;
 
    function plusClick() {
