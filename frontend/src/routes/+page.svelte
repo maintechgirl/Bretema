@@ -19,7 +19,7 @@
     });
 
     let deleteProduct = (id) => {
-        fetch(`http://localhost:8080/${id}`, { method: "DELETE" })
+        fetch(`http://localhost:8080/${id}`, {method: "DELETE"})
             .then(response => {
                 if (response.ok) {
                     console.log(`Product deleted: ${id}`);
@@ -33,6 +33,8 @@
 
 
 
+
+
 </script>
 
 <section>
@@ -43,10 +45,10 @@
         <Search/>
     </div>
 
-     <div class="products">
+    <div class="products">
         {#if productsList && productsList.length > 0}
             {#each productsList as product}
-                <ProductCard {product} onDelete={deleteProduct} />
+                <ProductCard {product} onDelete={deleteProduct}/>
             {/each}
         {:else}
             <p>No products found.</p>
@@ -66,12 +68,12 @@
 
 
 <style>
-    section{
+    section {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        overflow-x:hidden;
-        overflow-y:auto;
+        overflow-x: hidden;
+        overflow-y: auto;
         max-width: 500px;
         height: 801px;
     }

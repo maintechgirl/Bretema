@@ -3,38 +3,69 @@
 
 <script>
     import HeaderProduct from "../components/HeaderProduct.svelte";
+
+    let products = "";
+    let error;
+    let name = "";
+    let color = "";
+    let quantity = "";
+
+    //let url = "";
+    let id = "";
+
+    function createID() {
+        return crypto.randomUUID()
+    }
+
+    function createProduct() {
+
+        let info = {
+            name: name,
+            color: color,
+            quantity: quantity,
+            // imageUrl: url,
+            id: createID()
+        }
+
+        fetch("http://localhost:8080/", {method: "POST", body: JSON.stringify(info)})
+            .then(response => response.json())
+            .then(data => products = data)
+        alert("producto añadido")
+    }
+
+
 </script>
 
 <section>
     <HeaderProduct/>
 
-    <form>
-      <a href="/" class="btn-close"><span class="material-symbols-outlined" >close</span></a>
+    <form on:submit|preventDefault={createProduct}>
+        <a href="/" class="btn-close"><span class="material-symbols-outlined">close</span></a>
         <p>Añadir Producto</p>
         <img src="src/assets/missingProductImage.png" alt="missingProductImage"/>
         <ul>
             <li>
                 <label for="name">Nombre*</label>
-                <input type="text" id="name" name="name"/>
+                <input type="text" id="name" name="name" bind:value={name} required/>
             </li>
             <li>
                 <label for="color">Color</label>
-                <input type="text" id="color" name="color"/>
+                <input type="text" id="color" name="color" bind:value={color} required/>
             </li>
             <li>
                 <label for="cantidad">Cantidad*</label>
-                <input type="text" id="cantidad" name="cantidad"/>
+                <input type="text" id="cantidad" name="cantidad" bind:value={quantity} required/>
             </li>
         </ul>
-        <div class="btn_add-file">
-        <label for="file"></label>
+        <!--<div class="btn_add-file">
+       <label for="file"></label>
         <input
                 type="file"
                 id="file"
                 name="fileToUpload"
                 required
         />
-        </div>
+        </div>-->
         <div>
             <button class="btn_submit" type="submit"><span class="material-symbols-outlined">check_box</span></button>
         </div>
@@ -107,7 +138,7 @@
         color: #452E0D;
     }
 
-    .btn_submit{
+    .btn_submit {
         cursor: pointer;
         color: #452E0D;
         border: none;
@@ -115,7 +146,7 @@
         margin: 5px;
     }
 
-    .btn_add-file{
+    .btn_add-file {
         cursor: pointer;
         border: none;
         margin: 10px;
@@ -123,11 +154,11 @@
         display: contents;
     }
 
-    .material-symbols-outlined{
+    .material-symbols-outlined {
         font-size: 40px;
     }
 
-    .btn_submit .material-symbols-outlined{
+    .btn_submit .material-symbols-outlined {
         font-size: 60px;
     }
 
