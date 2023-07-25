@@ -9,8 +9,7 @@
     let name = "";
     let color = "";
     let quantity = "";
-
-    //let url = "";
+    let url = "";
     let id = "";
 
     function createID() {
@@ -18,19 +17,32 @@
     }
 
     function createProduct() {
-
         let info = {
             name: name,
             color: color,
             quantity: quantity,
-            // imageUrl: url,
+            imageUrl: url,
             id: createID()
-        }
+        };
 
-        fetch("http://localhost:8080/", {method: "POST", body: JSON.stringify(info)})
-            .then(response => response.json())
-            .then(data => products = data)
-        alert("producto añadido")
+        fetch("http://localhost:8080/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(info)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then(data => {products = data;})
+            .catch(error => {
+                console.error("Error:", error);
+            })
+        alert("producto añadido");
     }
 
 
@@ -56,6 +68,10 @@
                 <label for="cantidad">Cantidad*</label>
                 <input type="text" id="cantidad" name="cantidad" bind:value={quantity} required/>
             </li>
+            <li>
+                <label for="image_url">ImagenUrl*</label>
+                <input type="text" bind:value={url} required/>
+            </li>
         </ul>
         <!--<div class="btn_add-file">
        <label for="file"></label>
@@ -77,7 +93,6 @@
 
     form {
         margin: 0 auto;
-        padding: 1em;
         max-width: 400px;
         display: flex;
         flex-direction: column;
@@ -131,11 +146,13 @@
     .btn-close {
         display: flex;
         align-self: end;
-        font-size: 30px;
         cursor: pointer;
         outline: none;
         text-decoration: none;
         color: #452E0D;
+        left: -14px;
+        position: relative;
+        bottom: -16px;
     }
 
     .btn_submit {
@@ -143,27 +160,33 @@
         color: #452E0D;
         border: none;
         background-color: #FDDED4;
-        margin: 5px;
+        margin-bottom: 20px;
+
     }
 
-    .btn_add-file {
+    /*.btn_add-file {
         cursor: pointer;
         border: none;
         margin: 10px;
         width: 308px;
         display: contents;
-    }
+    }*/
 
-    .material-symbols-outlined {
-        font-size: 40px;
+   .btn-close .material-symbols-outlined {
+        font-size: 27px;
     }
 
     .btn_submit .material-symbols-outlined {
-        font-size: 60px;
+        font-size: 49px;
     }
 
-    .material-symbols-outlined:hover {
+    .btn-close .material-symbols-outlined:hover {
         font-weight: bold;
+        font-size: 29px;
+    }
+
+    .btn_submit .material-symbols-outlined:hover {
+        font-size: 53px;
     }
 
     img {
