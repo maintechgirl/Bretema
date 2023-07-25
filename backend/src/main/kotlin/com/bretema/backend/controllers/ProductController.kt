@@ -45,31 +45,24 @@ class ProductController(private val productRepository: ProductRepository) {
         }
     }
 
-    //@PostMapping("/{id}")
-    //fun updateProduct(
-    //    @PathVariable id: String,
-    //    @RequestBody updatedProduct: Product
-    //): ResponseEntity<Product> {
-    //    val product = productRepository.findById(UUID.fromString(id)).getOrNull()
+    @PostMapping("/{id}")
+    fun updateProduct(
+        @PathVariable id: String,
+        @RequestBody updatedProduct: Product
+    ): ResponseEntity<Product> {
+        val product = productRepository.findById(UUID.fromString(id)).getOrNull()
 
-    //    if (product == null) {
-    //        return ResponseEntity.notFound().build()
-    //    }
+        if (product == null) {
+            return ResponseEntity.notFound().build()
+        }
+        product.name = updatedProduct.name
+        product.color = updatedProduct.color
+        product.quantity = updatedProduct.quantity
+        product.imageUrl = updatedProduct.imageUrl
 
-    //    product.name = updatedProduct.name
-    //    product.quantity = updatedProduct.quantity
-        // Update other properties as needed
-
-    //    val updatedProduct = productRepository.save(product)
-    //    return ResponseEntity.ok(updatedProduct)
-    //}
-
-
-    //@PutMapping("/")
-    //fun updateProductById(@RequestBody product: Product): Product? {
-    //    product.id.let { productRepository.findById(it).orElseThrow { ProductNotFoundException() } }
-    //   return productRepository.save(product)
-    // }
+        val updatedProduct = productRepository.save(product)
+        return ResponseEntity.ok(updatedProduct)
+    }
 
     @DeleteMapping("/{id}")
     fun deleteProductById(@PathVariable id: String): ProductDTO? {
