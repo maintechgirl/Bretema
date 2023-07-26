@@ -28,9 +28,9 @@
         <p>{product.color} </p>
 
         <div class="group-icons-quantity">
-            <button on:click={menosClick}>-</button>
-            <div><p> {count}</p></div>
-            <button on:click={plusClick}>+</button>
+            <button class="btn-plus" on:click={menosClick}><span class="material-symbols-outlined">add_box</span></button>
+            <div><p>{count}</p></div>
+            <button class="btn-minus" on:click={plusClick}><span class="material-symbols-outlined">indeterminate_check_box</span></button>
         </div>
 
         <div class="group-icons-redact-delete">
@@ -39,7 +39,7 @@
             </div>
 
             <div class="icon-delete">
-                <button on:click={() => onDelete(product.id)}>
+                <button class="btn-delete" on:click={() => onDelete(product.id)}>
                     <span class="material-symbols-outlined">delete</span>
                 </button>
             </div>
@@ -75,7 +75,7 @@
     }
 
     .product-info {
-        padding: 0 0 0 10px;
+        padding: 0 0 0 15px;
         height: 20px;
     }
 
@@ -83,7 +83,6 @@
         font-size: 12px;
         line-height: 12px;
     }
-
 
     .material-symbols-outlined {
         font-weight: lighter;
@@ -95,26 +94,40 @@
         color: #452E0D;
     }
 
-
     .group-icons-quantity {
         display: flex;
         flex-direction: row;
-        gap: 12px;
+        gap: 3px;
     }
 
     .group-icons-quantity p {
         position: relative;
-        top: -7px;
+        top: -2px;
+    }
+
+    .btn-plus{
+        background-color: white;
+        border: none;
+    }
+
+    .btn-minus{
+        background-color: white;
+        border: none;
     }
 
     .group-icons-redact-delete {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 28px;
         position: relative;
         top: -90px;
         right: -124px;
         width: 40px;
+    }
+
+    .btn-delete{
+        background-color: white;
+        border: none;
     }
 
 

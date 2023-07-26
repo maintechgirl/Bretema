@@ -12,9 +12,9 @@
     let url = "";
     let id = "";
 
-    function createID() {
-        return crypto.randomUUID()
-    }
+   //function createID() {
+    //    return crypto.randomUUID()
+    // }
 
     function updateProduct() {
         let info = {
@@ -22,11 +22,11 @@
             color: color,
             quantity: quantity,
             imageUrl: url,
-            id: createID()
+            id: id
         };
 
-        fetch("http://localhost:8080/", {
-            method: "POST",
+        fetch("http://localhost:8080/${id}", {
+            method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(info)
         })
@@ -40,7 +40,7 @@
             .catch(error => {
                 console.error("Error:", error);
             })
-        alert("producto añadido");
+        alert("producto editado");
     }
 </script>
 
