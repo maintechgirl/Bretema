@@ -15,6 +15,7 @@ import kotlin.jvm.optionals.getOrNull
 @CrossOrigin
 class ProductController(private val productRepository: ProductRepository) {
 
+
     @GetMapping("/")
     fun allproducts(@RequestParam search: String?): List<ProductDTO> {
         if (!search.isNullOrBlank()) {
