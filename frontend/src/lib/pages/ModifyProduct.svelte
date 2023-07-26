@@ -12,9 +12,9 @@
     let url = "";
     let id = "";
 
-   //function createID() {
-    //    return crypto.randomUUID()
-    // }
+    function createID() {
+        return crypto.randomUUID()
+    }
 
     function updateProduct() {
         let info = {
@@ -22,10 +22,10 @@
             color: color,
             quantity: quantity,
             imageUrl: url,
-            id: id
+            id: createID()
         };
 
-        fetch("http://localhost:8080/${id}", {
+        fetch(`http://localhost:8080/${id}`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(info)
