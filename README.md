@@ -1,4 +1,5 @@
-![logo](https://github.com/maintekgirl/Bretema/blob/main/frontend/src/assets/logosinfondo.png)
+`<img src="https://github.com/maintekgirl/Bretema/blob/main/frontend/src/assets/logosinfondo.png" width="200" height="200"/>
+
 
 # Bretema
 Brétema by Trece is a small family business that creates earrings and necklaces.
