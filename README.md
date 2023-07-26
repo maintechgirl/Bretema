@@ -1,3 +1,5 @@
+![logo](https://github.com/maintekgirl/Bretema/blob/main/frontend/src/assets/logosinfondo.png)
+
 # Bretema
 Brétema by Trece es una pequeña empresa familiar que crea aretes y collares.
 La marca no cuenta con tienda física, solo venta online a través de Instagram y Facebook.
