@@ -1,8 +1,21 @@
 ![logo](https://github.com/maintekgirl/Bretema/blob/main/frontend/src/assets/logosinfondo.png)
 
 # Bretema
-Brétema by Trece es una pequeña empresa familiar que crea aretes y collares.
-La marca no cuenta con tienda física, solo venta online a través de Instagram y Facebook.
+Brétema by Trece is a small family business that creates earrings and necklaces.
+The brand does not have a physical store, only online sales through Instagram and Facebook.
+
+Brétema by Trece needs an inventory platform to manage the stock of its products manually to improve their control.
+
+## Technical requirements
+1) Version web and mobile
+2) Login page
+3) Display of the products list on the main screen
+4) Product cards with image.,shown in red if the product is out of stock
+5) Pages to insert and to modify product
+6) Search products by names
+7) Filtering of products with stock and without stock
+8) Buttons for modifying the quantity of products
+9) Button to delete product
 
 ## Tech Stack
 
@@ -49,4 +62,6 @@ details.`
 | POST   | `/`                          | Creates a new product                            |
 | PUT    | `/{id}`                      | Updates an existing product                      |
 | DELETE | `/{id}`                      | Deletes an existing product                      |
+
+
 
