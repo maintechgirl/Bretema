@@ -5,7 +5,6 @@
    export let searchTerm = '';
    export let searchResults = [];
 
-   //FUNCION QUE DEBE LLAMAR UN ENDPOINT A SER CREADO EN EL BACKEND QUE TENGA UNA REQUETS PARAM
     async function fetchSearchResults() {
         try {
             const response = await fetch(`http://localhost:8080/search?term=${searchTerm}`);
@@ -16,15 +15,12 @@
             console.error('Error al realizar la búsqueda:', error);
         }
     }
-
-   //FUNCION PARA CAPTURAR EL VALOR DE BUSQUEDA DEL INPUT
    function handleInput(event) {
        searchTerm = event.target.value;
        fetchSearchResults();
    }
-
-   // Llamar a fetchSearchResults() cuando el componente se monte inicialmente
    onMount(fetchSearchResults);
+
 </script>
 
 

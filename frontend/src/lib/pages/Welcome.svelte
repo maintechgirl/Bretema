@@ -1,9 +1,7 @@
 <section>
     <div class="container">
     <img src="src/assets/logosinfondo.png" alt="Logo" class="img_size1"/>
-    <div class="btn" >
-        <a href="/Login">Log In</a>
-    </div>
+    <div class="btn"><a href="/Login">Log In</a></div>
     </div>
 </section>
 

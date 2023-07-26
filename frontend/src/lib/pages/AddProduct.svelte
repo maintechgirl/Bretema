@@ -43,8 +43,8 @@
         alert("producto añadido");
     }
 
-
 </script>
+
 
 <section>
     <HeaderProduct/>

@@ -15,8 +15,6 @@
     <Select items={collection} bind:value showChevron/>
 </div>
 
-<!--<p>{value?.label || ''}</p>-->
-
 
 <style>
 

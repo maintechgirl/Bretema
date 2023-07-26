@@ -1,8 +1,6 @@
 <script>
     import HeaderCatalog from "$lib/components/HeaderCatalog.svelte";
     import Search from "$lib/components/Search.svelte";
-
-
     import {onMount} from "svelte";
     import SelectMenu from "../lib/components/SelectMenu.svelte";
     import ProductCard from "../lib/components/ProductCard.svelte";
@@ -31,11 +29,8 @@
             .catch(error => console.error('Error deleting product:', error));
     };
 
-
-
-
-
 </script>
+
 
 <section>
     <HeaderCatalog/>

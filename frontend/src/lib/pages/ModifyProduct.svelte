@@ -25,7 +25,7 @@
             id: createID()
         };
 
-        fetch(`http://localhost:8080/${id}`, {
+        fetch(`http://localhost:8080/`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(info)

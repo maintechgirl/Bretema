@@ -2,11 +2,6 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,200,0,0"/>
 
 <script>
-   /* export let id;
-    export let name;
-    export let color;
-    export let quantity;
-    export let imageUrl;*/
    export let product;
    export let onDelete;
 
@@ -28,10 +23,11 @@
         <p>{product.color} </p>
 
         <div class="group-icons-quantity">
-            <button class="btn-plus" on:click={menosClick}><span class="material-symbols-outlined">add_box</span></button>
+            <button class="btn-plus" on:click={menosClick}><span class="material-symbols-outlined">indeterminate_check_box</span></button>
             <div><p>{count}</p></div>
-            <button class="btn-minus" on:click={plusClick}><span class="material-symbols-outlined">indeterminate_check_box</span></button>
+            <button class="btn-minus" on:click={plusClick}>  <span class="material-symbols-outlined">add_box</span></button>
         </div>
+
 
         <div class="group-icons-redact-delete">
             <div class="icon-redact">
@@ -129,6 +125,5 @@
         background-color: white;
         border: none;
     }
-
 
 </style>

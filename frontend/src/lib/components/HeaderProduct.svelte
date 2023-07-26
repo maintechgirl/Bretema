@@ -5,7 +5,6 @@
     <div>
        <img src="src/assets/logosinfondo.png" alt="Logo" />
     </div>
-
 </nav>
 
 
